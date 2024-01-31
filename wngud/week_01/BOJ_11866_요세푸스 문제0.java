@@ -15,7 +15,7 @@ public class Main {
         // 1. 큐 세팅하기
         // N만큼의 숫자를 큐에 넣기
         for(int i = 1; i <= N; i++) {
-            queue.offer(i); // offer == 넣기
+            queue.offer(i); // offer == 넣기!
         }
 
         // 2. 큐 실행하기
