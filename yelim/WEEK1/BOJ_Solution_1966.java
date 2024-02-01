@@ -47,14 +47,6 @@ public class BOJ_Solution_1966 {
 				if (front[0] == count) break;			
 			}
 			
-//			for(int j=0; j<n-1; j++) {
-//				// 이렇게 하면 처음에만 0번째 검사, 두번째부터는 0-1-.. 검사 안됨
-//				if (impList.get(j) < impList.get(j+1)) {
-//					impList.add(impList.get(j));
-//					impList.remove(j);
-//				}
-//			}
-//			System.out.println(impList);
 			
 			System.out.println(count);
 			
