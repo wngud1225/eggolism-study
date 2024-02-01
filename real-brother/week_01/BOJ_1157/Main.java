@@ -1,4 +1,4 @@
-package b1157;
+package BOJ_1157;
 
 import java.util.*;
 public class Main {

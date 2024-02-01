@@ -1,4 +1,4 @@
-package b12605;
+package BOJ_12605;
 
 import java.util.*;
 import java.io.*;

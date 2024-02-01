@@ -1,4 +1,4 @@
-package b1966;
+package BOJ_1966;
 
 import java.io.*;
 import java.util.*;
