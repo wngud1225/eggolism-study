@@ -33,6 +33,7 @@ public class Main {
             }
 
             // 2. top
+            // try-catch 사용
             else if (input.equals("top")) {
                 try {
                     System.out.println(stack.peek());
@@ -56,6 +57,7 @@ public class Main {
                 }
             }
             // 5. pop
+            // try-catch 사용
             else if (input.equals("pop")) {
                 try {
                     System.out.println(stack.pop());

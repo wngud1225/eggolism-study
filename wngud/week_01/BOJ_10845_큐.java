@@ -3,9 +3,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.Scanner;
 
-public class Main {
+public class BOJ_10845_큐 {
     public static void main(String[] args) throws IOException {
 
 //        Scanner sc = new Scanner(System.in);
@@ -74,6 +73,8 @@ public class Main {
 
     }
 
+    // Object를 해보긴 했는데
+    // int를 반환하게 할 수는 없을까?
     static int lastOne(Queue queue) {
         int x = 0;
         for (Object o : queue) {

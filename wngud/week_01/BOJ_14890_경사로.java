@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
+        // 입력 받기
         Scanner sc = new Scanner(System.in);
 
         int answer = 0;
@@ -11,9 +12,11 @@ public class Main {
         int L = sc.nextInt();
 
         // 매트릭스 만들기
-        // 4번을 확인해야 함 --> 2번만?
+        // 2번만 확인하도록 로직을 만듦
+        // line*2로 해서 인덱스가 일자로 쭉 돌도록 만듦
         int[][] matrix = new int[line*2][line];
 
+        // 라인 만들기
         // 라인 만들기 (세로)
         for (int i = 0; i < line; i++) {
             for (int j = 0; j < line; j++) {
@@ -22,38 +25,33 @@ public class Main {
             }
         }
 
-        // 라인 만들기 (세로)
+        // 라인 만들기 (가로 추가)
         for (int i = 0; i < line; i++) {
             for (int j = 0; j < line; j++) {
-//                System.out.println("세로 추가" + (i+line) + " " + j);
                 matrix[i+line][j] = matrix[j][i];
-
             }
         }
 
 
+         // 2. 경사로 판별 시작
 
-        // 경사로 판별 시작
-        // L로 인한 예외 처리하기
-        // 내리막길 -> 더하기 반복, 앞 체크 추가적으로 반복
-        // 오르막길 -> 뒤 체크 더 추가적으로 반복
+/*         L로 인한 예외 처리하기
+         내리막길 -> 더하기 반복, 앞 체크 추가적으로 반복
+         오르막길 -> 뒤 체크 더 추가적으로 반복
 
-        // 인덱스 에러 대비하기
+         인덱스 에러 대비하기
 
-        //[3, 3, 2, 2, 3, 3] [3, 2, 2, 2, 3, 3] 겹쳐서 경사로 되는 문제
-        //visited 넣기 -> 내리막길에서 넣어주는게 중요 -> 판별은 오르막길만 쓰임
+        [3, 3, 2, 2, 3, 3] [3, 2, 2, 2, 3, 3] 겹쳐서 경사로 되는 문제
+        visited 넣기 -> 내리막길에서 넣어주는게 중요 -> 판별은 오르막길만 쓰임
 
-        // L = 1이 빡셈
-        //[3, 2, 2, 1, 2, 3]
+         L = 1이 빡셈
+        [3, 2, 2, 1, 2, 3]*/
 
         for (int n = 0; n < line*2; n++) {
             int[] visited = new int[line];
             int start = 0;
             // 라인 만들기
             int[] line6 = matrix[n];
-//            System.out.println("=====================");
-//            System.out.println(Arrays.toString(line6));
-
 
             // 탐색 시작
             while (start < line6.length - 1) {
@@ -149,11 +147,9 @@ public class Main {
 //                System.out.println(">>> 전부 통과 실패입니다.");
             } // 한줄 아예 끝
 
-
         }
 
         System.out.println(answer);
-
 
     }
 }
