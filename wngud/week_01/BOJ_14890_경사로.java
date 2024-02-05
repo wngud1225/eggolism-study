@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Main {
+public class BOJ_14890_경사로 {
     public static void main(String[] args) {
 
         // 입력 받기

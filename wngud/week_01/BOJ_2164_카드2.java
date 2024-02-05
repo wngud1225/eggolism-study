@@ -4,7 +4,7 @@ import java.io.InputStreamReader;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class Main {
+public class BOJ_2164_카드2 {
 	public static void main(String[] args) throws NumberFormatException, IOException {
 
 		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));

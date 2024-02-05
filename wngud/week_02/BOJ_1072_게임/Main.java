@@ -19,7 +19,7 @@ public class Main {
 		double x = sc.nextInt();
 		double y = sc.nextInt();
 		
-		double z = ((int) ((long) y * 100 / x); // 형변환 문제
+		double z = ((int) ((long) y * 100 / x)); // 형변환 문제
 			
 		// 2. 이진 탐색
 		int answer = -1;

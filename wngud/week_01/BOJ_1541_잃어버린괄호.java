@@ -1,9 +1,8 @@
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-public class Main {
+public class BOJ_1541_잃어버린괄호 {
     public static void main(String[] args) {
 
         /*설계 아이디어

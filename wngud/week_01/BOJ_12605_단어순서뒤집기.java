@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Main {
+public class BOJ_12605_단어순서뒤집기 {
     public static void main(String[] args) {
 
         /*설계 아이디어

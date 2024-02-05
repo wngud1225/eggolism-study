@@ -3,7 +3,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Scanner;
 
-public class Main {
+public class BOJ_10815_숫자카드 {
     public static void main(String[] args) {
 
         // 입력 받기
