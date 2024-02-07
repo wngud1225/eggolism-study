@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Main {
+public class BOJ_9012_괄호 {
 	public static void main(String[] args) {
 
 		/* 설계 아이디어

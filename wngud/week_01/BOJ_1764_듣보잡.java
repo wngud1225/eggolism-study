@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.Set;
 
-public class Main {
+public class BOJ_1764_듣보잡 {
 	public static void main(String[] args) {
 
 		/*설계 아이디어

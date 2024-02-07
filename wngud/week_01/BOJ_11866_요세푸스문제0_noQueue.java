@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Main {
+public class BOJ_11866_요세푸스문제0_noQueue {
     public static void main(String[] args) {
 
         /*설계 아이디어_noQueue

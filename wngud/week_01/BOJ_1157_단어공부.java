@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Main {
+public class BOJ_1157_단어공부 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
