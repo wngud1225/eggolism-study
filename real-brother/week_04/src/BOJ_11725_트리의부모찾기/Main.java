@@ -3,7 +3,7 @@ package BOJ_11725_트리의부모찾기;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
-
+//1
 public class Main {
 	static int n;
     static ArrayList<Integer>[] graph;
