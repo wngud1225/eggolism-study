@@ -10,7 +10,7 @@ public class Main {
 	static Scanner sc = new Scanner(System.in);
 	static int n;
 	static int m;
-	static int maxSize = Integer.MIN_VALUE;
+	static int maxSize = 0; // 이거 처음에 MIN_VALUE로 했다가 틀림..
 	static int[][] originLaboratory;
 	static int[][] testLaboratory;
 	static boolean[] visited;
@@ -74,9 +74,6 @@ public class Main {
 
 	// 바이러스 퍼뜨리기
 	private static void spreadVirus() {
-
-		labVisited = new boolean[n][m];
-		safeVisited = new boolean[n][m];
 		// 벽 세워주기
 		for (int comb : combination) {
 			int r = comb / m;
@@ -92,7 +89,6 @@ public class Main {
 			}
 		}
 		
-		
 		// 안전영역 크기들 구해서 -> 최대값 출력
 		for (int i = 0; i < n; i++) {
 			for (int j = 0; j < m; j++) {
@@ -100,13 +96,6 @@ public class Main {
 					int safeSize = getSafeSize(i * n + j);
 					if (safeSize > maxSize) {
 						maxSize = safeSize;
-						System.out.println(safeSize);
-						for (int k = 0; k < n; k++) {
-							for (int l = 0; l < m; l++) {
-								System.out.print(testLaboratory[k][l] + " ");
-							}
-							System.out.println();
-						}
 					}
 				}
 			}
@@ -119,7 +108,6 @@ public class Main {
 		int[] start = {startR, startC};
 		Queue<int[]> queue = new ArrayDeque<int[]>();
 		queue.add(start);
-		labVisited[startR][startC] = true;
 		
 		while (!queue.isEmpty()) {
 			int[] now = queue.poll();
@@ -131,9 +119,8 @@ public class Main {
 				int nextC = nc + dc[i];
 				
 				if (nextR < 0 || nextR >= n || nextC < 0 || nextC >= m) continue;
-				if (testLaboratory[nextR][nextC] == 0 && !labVisited[nextR][nextC]) {
+				if (testLaboratory[nextR][nextC] == 0) {
 					testLaboratory[nextR][nextC] = 2;
-					labVisited[nextR][nextC] = true;
 					queue.add(new int[] {nextR, nextC});
 				}
 				
@@ -141,34 +128,16 @@ public class Main {
 		}
 	}
 	
+	// 안전영역의 가장 큰 덩어리는 구하는줄 알았음....
+	// 문제를 똑바로 읽읍시다.
+	// 그냥 0의 개수를 구하면 된 
 	private static int getSafeSize(int index) {
-		int size = 1;
-		int startR = index / m;
-		int startC = index % m;
-		int[] start = {startR, startC};
-		Queue<int[]> queue = new ArrayDeque<int[]>();
-		queue.add(start);
-		safeVisited[startR][startC] = true;
-		
-		while (!queue.isEmpty()) {
-			int[] now = queue.poll();
-			int nr = now[0];
-			int nc = now[1];
-			
-			for (int i = 0; i < 4; i++) {
-				int nextR = nr + dr[i];
-				int nextC = nc + dc[i];
-				
-				if (nextR < 0 || nextR >= n || nextC < 0 || nextC >= m) continue;
-				if (testLaboratory[nextR][nextC] == 0 && !safeVisited[nextR][nextC]) {
-					safeVisited[nextR][nextC] = true;
-					size++;
-					queue.add(new int[] {nextR, nextC});
-					
-				}
+		int size = 0;
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j < m; j++) {
+				if (testLaboratory[i][j] == 0) size++;
 			}
 		}
-		
 		return size;
 	}
 }
