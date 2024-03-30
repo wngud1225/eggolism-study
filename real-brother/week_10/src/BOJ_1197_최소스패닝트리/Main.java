@@ -30,6 +30,8 @@ public class Main {
                 graph.get(b).add(new Edge(a, c));
             }
         }
+        
+        // 프림 알고리즘 구현하기
 
         int[] parent = new int[V + 1];
         int[] key = new int[V + 1];
