@@ -25,10 +25,8 @@ public class Main {
             int a = sc.nextInt();
             int b = sc.nextInt();
             int c = sc.nextInt();
-            if (a <= V && b <= V) {
-                graph.get(a).add(new Edge(b, c));
-                graph.get(b).add(new Edge(a, c));
-            }
+            graph.get(a).add(new Edge(b, c));
+            graph.get(b).add(new Edge(a, c));
         }
         
         // 프림 알고리즘 구현하기
