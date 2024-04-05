@@ -8,6 +8,10 @@ public class Main {
     static Scanner sc = new Scanner(System.in);
     static int n, m, k;
     static int[][] map;
+    //     2
+    //  4  1(윗면) 3(동)
+    //     5
+    //     6(밑면)
     static int[] dice = {2, 4, 1, 3, 5, 6};
     static int[] dr = {-1, 0, 1, 0}; // 북 동 남 서
     static int[] dc = {0, 1, 0, -1};
@@ -28,18 +32,12 @@ public class Main {
 				map[i][j] = tempString[j].charAt(0) - 48;
 			}
 		}
-		System.out.print("현재 주사위 ");
-		for (int i = 0; i < 6; i++) {
-			System.out.print(dice[i] + " ");
-		}
     	
     	int turn = 1;
     	while (turn <= k) {
-//    		System.out.println("--------------------------");
-    		
     		moveDice();
-    		int A = dice[5];
-    		int B = map[nowR][nowC];
+    		int A = dice[5]; // 주사위 밑면
+    		int B = map[nowR][nowC]; // 현재 지도에 있는 숫자
     		
     		if (A > B) {
     			direction++;
@@ -49,22 +47,8 @@ public class Main {
     			direction--;
     			if (direction == -1) direction+=4;
     		}
-//    		System.out.println("현재좌표 " + nowR + " " + nowC);
-//    		System.out.print("현재 주사위 ");
-//    		for (int i = 0; i < 6; i++) {
-//				System.out.print(dice[i] + " ");
-//			}
-//    		System.out.println();
-//    		System.out.println(A +" " + B + " 방향 " + direction);
-    		
     		turn++;
     	}
-    	
-    	
-    	
-    	
-//    	printMap();
-    	
     	System.out.println(score);
 	}
     
@@ -72,6 +56,7 @@ public class Main {
     static void moveDice() {
 		int nr = nowR + dr[direction];
 		int nc = nowC + dc[direction];
+		// 범위 밖이라면 방향 반대로해서 가기
 		if(nr <0 || nr >= n || nc < 0 || nc >= m) {
 			direction += 2;
 			if (direction >= 4) direction -= 4;
@@ -108,10 +93,10 @@ public class Main {
 				}
 			}
 		}
-//		System.out.println((originNum * scoreCount) + "점 획득");
 		score += (originNum * scoreCount);
 	}
 
+	// 주사위 굴리기 ((데굴
 	// 0 1 2 3 (북 동 남 서)
 	static void rollDice(int dir, int r, int c) {
 		int tmp = dice[2];
@@ -141,20 +126,5 @@ public class Main {
 			dice[1] = tmp;
 			break;
 		}
-		
 	}
-
-
-	private static void printMap() {
-		System.out.println("--------------------------");
-		for (int i = 0; i < n; i++) {
-			for (int j = 0; j < m; j++) {
-				System.out.print(map[i][j] + " ");
-			}
-			System.out.println();
-		}
-	}
-    
-    
-    
 }
