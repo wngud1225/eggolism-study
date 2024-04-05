@@ -22,7 +22,7 @@ public class Main {
     static int[] dc = {0, -1, 0, 1};
     static int minMST = Integer.MAX_VALUE;
     
-    // 모든 섬끼리 다리를 놓아보며 다리 길이를 가지는 트리 구성하기 
+    // 모든 섬끼리 다리를 놓아보며 다리 길이를 가중치로 가지는 트리 구성하기 
     // 전체 섬이 연결되어 있을 경우만
     // 최소 스패닝트리 구하기
 
