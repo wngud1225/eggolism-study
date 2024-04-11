@@ -50,7 +50,6 @@ public class Solution {
 		for (int ru = 1; ru <= upMax; ru++) {
 			nextDessert:
 			for (int rd = 1; ru + rd <= rightMax; rd++) {
-				int maxRC = Math.max(rightMax, upMax);
 				if (ru + rd > rightMax || ru > upMax) continue;
 				
 				dessertCount = 0;
