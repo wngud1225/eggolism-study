@@ -33,20 +33,14 @@ public class Main {
 		}
     	perm = new int[m];
     	
-    	
     	chickenComb(0,0);
     	
-    	
     	System.out.println(minChickenDistance);
-    	
     }
-
+    
+    // 조합으로 치킨집 고르기
 	private static void chickenComb(int depth, int start) {
 		if (depth == m) {
-//			for (int i = 0; i < perm.length; i++) {
-//				System.out.print(perm[i] + " ");
-//			}
-//			System.out.println();
 			int cityChickenDis = calculateCityChickenDistance();
 			minChickenDistance = Math.min(minChickenDistance, cityChickenDis);
 			return;
@@ -60,9 +54,9 @@ public class Main {
 				visited[i] = false;
 			}
 		}
-		
 	}
-
+	
+	// 도시의 치킨 거리를 계산하기
 	private static int calculateCityChickenDistance() {
 		int cityChichenDistance = 0;
 		for (int i = 0; i < n; i++) {
@@ -72,19 +66,17 @@ public class Main {
 				}
 			}
 		}
-		
 		return cityChichenDistance;
 	}
-
+	
+	// 각 집에서부터 치킨최소거리 계산하기
 	private static int getChickenDistance(int i, int j) {
 		int minDis = Integer.MAX_VALUE;
 		for (int resIndex : perm) {
 			int checkenR = chickenLoc.get(resIndex)[0];
 			int checkenC = chickenLoc.get(resIndex)[1];
 			int distance = Math.abs(i-checkenR) + Math.abs(j-checkenC);
-			
 			minDis = Math.min(distance, minDis);
-			
 		}
 		return minDis;
 	}
