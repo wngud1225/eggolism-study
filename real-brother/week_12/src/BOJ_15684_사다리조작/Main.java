@@ -19,15 +19,12 @@ public class Main {
 			ladder[a][b] = 1;
 		}
 		
-		
 		for (int i = 0; i <= 3; i++) {
             generateComb(1, 0, i);
         }
 		// 3번안에 찾지 못할 경우 -1리턴
         System.out.println(-1);
-		
 	}
-	
 	
 	static void generateComb(int start, int depth, int size) {
         if (depth == size) {
@@ -38,7 +35,8 @@ public class Main {
             }
             return;
         }
-
+        
+        // 사다리 백트래킹으로 설정 및 해제하기
         for (int r = start; r <= h; r++) {
             for (int c = 1; c < n; c++) {
                 if (ladder[r][c] == 1)  continue;
