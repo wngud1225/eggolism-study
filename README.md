@@ -57,8 +57,11 @@
 ```
 
 -   예시
-    -   `Solved: BOG_9999_치킨냠냠 해결완료`
-    -   `Refactor: BOG_9999_치킨냠냠 리펙토링 완료`
+    -   `Solved: BOG_9999_치킨냠냠`
+    -   `Refactor: BOG_9999_치킨냠냠`
+    -   `Docs: README.md`
+    -   `Merge: real-brother To master`
+    -   `PR: Week_10`
 
 ### 태그 - 맨 앞글자 대문자
 
