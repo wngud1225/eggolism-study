@@ -1,4 +1,4 @@
-package PGS_신규아이디추천.copy;
+package PGS_신규아이디추천;
 
 class Solution {
     public String solution(String new_id) {
