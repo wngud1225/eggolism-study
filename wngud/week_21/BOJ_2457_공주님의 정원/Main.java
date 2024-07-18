@@ -1,42 +1,6 @@
 import java.util.*;
 
 public class Main {
-
-    public static class Node implements Comparable<Node> {
-
-        int startM;
-        int startD;
-        int endM;
-        int endD;
-
-        public Node (int startM, int startD, int endM, int endD) {
-            this.startM = startM;
-            this.startD = startD;
-            this.endM = endM;
-            this.endD = endD;
-        }
-
-        @Override
-        public int compareTo(Node o) {
-            if (this.startM != o.startM) return this.startM - o.startM;
-            if (this.startD != o.startD) return this.startD - o.startD;
-            if  (this.endM != o.endM) return this.endM - o.endM;
-            return this.endD - o.endD;
-        }
-        
-        @Override
-        public String toString() {
-            return "Node{" +
-                    "startM=" + startM +
-                    ", startD=" + startD +
-                    ", endM=" + endM +
-                    ", endD=" + endD +
-                    '}';
-        }
-
-    }
-
-
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
